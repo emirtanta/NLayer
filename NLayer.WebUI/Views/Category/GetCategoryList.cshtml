@@ -1,0 +1,32 @@
+﻿@using NLayer.EntityLayer.Concrete
+@model List<Category>
+@{
+    ViewBag.Title = "GetCategoryList";
+}
+
+<h2>GetCategoryList</h2>
+
+<a href="/Category/AddCategory" class="btn btn-success">Yeni Kategori</a>
+
+<table class="table table-bordered table-responsive table-striped table-hover">
+    <tr>
+        <th>#</th>
+        <th>Ad</th>
+        <th>Durum</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CategoryID</td>
+            <td>@item.CategoryName</td>
+            <td>@item.CategoryStatus</td>
+            <td>
+                <a href="/Category/EditCategory/@item.CategoryID" class="btn btn-info">Düzenle</a>
+                <a href="/Category/DeleteCategory/@item.CategoryID" class="btn btn-danger">Sil</a>
+            </td>
+        </tr>
+        
+    }
+</table>
+

@@ -1,0 +1,59 @@
+﻿@using NLayer.EntityLayer.Concrete
+@using PagedList @* sayfalama için  *@
+@using PagedList.Mvc @* sayfalama için *@
+@model PagedList.IPagedList<Heading>
+@{
+    ViewBag.Title = "AllHeading";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+@{
+    string color = "";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<br />
+
+<table class="table table-hover table-responsive ">
+    <tr>
+        <th>#</th>
+        <th>Başlık Adı</th>
+        <th>Kategori</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.HeadingID</td>
+
+            <td>@item.HeadingName</td>
+
+            @if (item.Category.CategoryName == "Tiyatro")
+            {
+                color = "text-danger";
+            }
+
+            <td class="@color">@item.Category.CategoryName</td>
+
+            <td>
+                <a href="/Default/Headings/@item.HeadingID">Yazara ait Yazılar</a>
+
+                <a href="/WriterPanelContent/AddContent/@item.HeadingID">Bu başlığa yaz</a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+@* sayfalama yerini ayarladık p değeri AllHeading'deki parametre değeri *@
+@Html.PagedListPager((IPagedList)Model,p=>Url.Action("AllHeading",new { p}),new PagedListRenderOptions
+{
+    LiElementClasses=new List<string>
+    {
+        "page-link" //css değerini vererek daha güzel görünüm elde ettik
+    }
+})
+
+
+

@@ -1,0 +1,34 @@
+﻿@model NLayer.EntityLayer.Concrete.Admin
+@{
+    ViewBag.Title = "EditAdmin";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<br />
+
+@using (Html.BeginForm("EditAdmin", "Authorazition", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.AdminID)
+
+<div class="form-group">
+    @Html.Label("Kategori Adı")
+    @Html.TextBoxFor(model => model.AdminUserName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(model => model.AdminUserName)
+    <br />
+
+    @Html.Label("Açıklama yaz")
+    @Html.TextBoxFor(model => model.AdminPassword, new { @class = "form-control",@type="password" })
+    @Html.ValidationMessageFor(model => model.AdminPassword)
+    <br />
+
+    @Html.Label("Rolü yaz")
+    @Html.TextBoxFor(model => model.AdminRole, new { @class = "form-control" })
+    @Html.ValidationMessageFor(model => model.AdminRole)
+    <br />
+
+    <button type="submit" class="btn btn-info">Kaydet</button>
+</div>
+}
+
+

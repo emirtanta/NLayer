@@ -1,0 +1,34 @@
+﻿@using NLayer.EntityLayer.Concrete
+@model List<Admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<a href="/Authorazition/AddAdmin" class="btn btn-success">Yeni Admin Tanımla</a>
+
+<table class="table table-bordered table-responsive table-striped table-hover">
+    <tr>
+        <th>#</th>
+        <th>Kullanıcı Mail</th>
+        <th>Yetki</th>
+        <th>Durum</th>
+        <th>Psif yap</th>
+        <th>Yetkisini Değiştir</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AdminID</td>
+            <td>@item.AdminUserName</td>
+            <td>@item.AdminRole</td>
+            <td>Aktif</td>
+            <td>
+                <a href="/Authorazition/EditAdmin/@item.AdminID" class="btn btn-info">Düzenle</a>
+                @*<a href="/Authorazition/DeleteCategory/@item.AdminID" class="btn btn-danger">Sil</a>*@
+            </td>
+        </tr>
+
+    }
+</table>
+

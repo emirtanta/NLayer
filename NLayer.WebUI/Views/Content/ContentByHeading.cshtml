@@ -1,0 +1,15 @@
+﻿@using NLayer.EntityLayer.Concrete
+@model List<Content>
+@{
+    ViewBag.Title = "ContentByHeading";
+}
+
+<h2>ContentByHeading</h2>
+
+@foreach (var item in Model)
+{
+    <p>@item.Writer.WriterName @item.Writer.WriterSurname</p>
+    <p>@item.ContentDate.ToShortDateString()</p>
+    <p>@item.ContentValue</p>
+    <hr />
+}

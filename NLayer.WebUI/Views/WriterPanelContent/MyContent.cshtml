@@ -1,0 +1,17 @@
+﻿@using NLayer.EntityLayer.Concrete
+@model List<Content>
+@{
+    ViewBag.Title = "MyContent";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<h2></h2>
+
+@foreach (var item in Model)
+{
+    <p>@item.Heading.HeadingName</p>
+    <p>@item.ContentDate.ToShortDateString()</p>
+    <p>@item.ContentValue</p>
+    <hr />
+}
+

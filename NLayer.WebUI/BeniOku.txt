@@ -1,0 +1,21 @@
+﻿
+
+/********************** AllowAnonymous **********************/
+
+	=> Authentication işlemleri için WebUi kısmının Web.config kısmına SystemWeb'in içerisine aşağıdaki kodu eklememiz gerekmektedir.Bu kod eklendikten sonra sisteme giriş yaptığımızda yetkisiz olan kullanıcılar ilgili sayfaya girerken Login kontrolerı içerisindeki Index sayfasına yönlendirileceklerdir
+
+	 <!-- authentication işlemleri için tanımlandı -->
+    <authentication mode="Forms">
+      <!-- yetkisi olmayan kullanıcıların sayfalara giriş yaptığında Login/WriterLogin sayfasına yönlendirilmesi için tanımlandı -->
+      <forms loginUrl="/Login/WriterLogin"></forms>
+    </authentication>
+
+	=> AllowAnonymous terimini kullanmak istediğimizde ilk önce WebUi tarafında Global.asax klasörü içerisnde aşağıdaki kodu eklememiz gerekmektedir
+
+	GlobalFilters.Filters.Add(new AuthorizeAttribute());
+
+	=> Yukarıdaki kodu ekledikten sonra ilgili kontrollerin üzerine [AllowAnonymous] eklememiz yeterlidir
+
+	/************** WriterPanelCOntroller ********************/
+
+	=>AllHeading sayfasında pagedlist kütüphanesini kullanarak sayfalama gerçekleştirdik.

@@ -1,0 +1,35 @@
+﻿@using NLayer.EntityLayer.Concrete
+@model List<Writer> 
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Yazarlar</h2>
+
+<br />
+
+<a href="/Writer/AddWriter">Ekle</a>
+
+<table class="table table-hover table-responsive">
+    <tr>
+        <th>#</th>
+        <th>Yazar Adı</th>
+        <th>Yazar Soyadı</th>
+        <th>Mail</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.WriterID</td>
+            <td>@item.WriterName</td>
+            <td>@item.WriterSurname</td>
+            <td>@item.WriterMail</td>
+            <td>
+                <a href="/Writer/EditWriter/@item.WriterID">Profili Düzenle</a>
+                <a href="/Writer/DeleteWriter/@item.WriterID">Sil</a>
+            </td>
+        </tr>
+    }
+
+</table>
+

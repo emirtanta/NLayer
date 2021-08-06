@@ -1,0 +1,11 @@
+C:\Users\emirt\source\repos\NLayer\NLayer.EntityLayer\bin\Debug\NLayer.EntityLayer.dll.config
+C:\Users\emirt\source\repos\NLayer\NLayer.EntityLayer\bin\Debug\NLayer.EntityLayer.dll
+C:\Users\emirt\source\repos\NLayer\NLayer.EntityLayer\bin\Debug\NLayer.EntityLayer.pdb
+C:\Users\emirt\source\repos\NLayer\NLayer.EntityLayer\bin\Debug\EntityFramework.dll
+C:\Users\emirt\source\repos\NLayer\NLayer.EntityLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\emirt\source\repos\NLayer\NLayer.EntityLayer\bin\Debug\EntityFramework.xml
+C:\Users\emirt\source\repos\NLayer\NLayer.EntityLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\emirt\source\repos\NLayer\NLayer.EntityLayer\obj\Debug\NLayer.EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\emirt\source\repos\NLayer\NLayer.EntityLayer\obj\Debug\NLayer.EntityLayer.csproj.CopyComplete
+C:\Users\emirt\source\repos\NLayer\NLayer.EntityLayer\obj\Debug\NLayer.EntityLayer.dll
+C:\Users\emirt\source\repos\NLayer\NLayer.EntityLayer\obj\Debug\NLayer.EntityLayer.pdb

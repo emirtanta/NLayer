@@ -1,0 +1,51 @@
+﻿@using NLayer.EntityLayer.Concrete
+@model List<Heading>
+@{
+    ViewBag.Title = "MyHeading";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+
+@{
+    string color = "";
+}
+
+<h2>MyHeading</h2>
+
+<br />
+
+<a href="/WriterPanel/NewHeading" class="btn btn-info">Yeni başlık ekle</a>
+
+<table class="table table-hover table-responsive ">
+    <tr>
+        <th>#</th>
+        <th>Başlık Adı</th>
+        <th>Kategori</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.HeadingID</td>
+
+            <td>@item.HeadingName</td>
+
+            @if (item.Category.CategoryName == "Tiyatro")
+            {
+                color = "text-danger";
+            }
+
+            <td class="@color">@item.Category.CategoryName</td>
+
+            <td>
+                <a href="/Content/ContentByHeading/@item.HeadingID">Yazara ait Yazılar</a>
+
+                <a href="/WriterPanel/EditHeading/@item.HeadingID">Düzenle</a>
+
+                <a href="/WriterPanel/DeleteHeading/@item.HeadingID">Sil</a>
+            </td>
+        </tr>
+    }
+
+</table>
+

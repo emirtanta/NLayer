@@ -1,0 +1,30 @@
+﻿@model NLayer.EntityLayer.Concrete.Admin
+@{
+    ViewBag.Title = "Yeni Admin Ekleme Formu";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("AddAdmin", "Authorazition", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Admin Adı")
+    @Html.TextBoxFor(model => model.AdminUserName)
+    @Html.ValidationMessageFor(model => model.AdminUserName)
+    <br />
+
+    @Html.Label("Şifre yaz")
+    @Html.TextBoxFor(model => model.AdminPassword)
+    @Html.ValidationMessageFor(model => model.AdminPassword)
+    <br />
+
+    @Html.Label("Rolü Seç")
+    @Html.TextBoxFor(model => model.AdminRole)
+    @Html.ValidationMessageFor(model => model.AdminRole)
+    <br />
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+</div>
+}
+

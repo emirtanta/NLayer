@@ -1,0 +1,29 @@
+﻿@model NLayer.EntityLayer.Concrete.Category
+@{
+    ViewBag.Title = "Kategori Güncelleme Sayfası";
+}
+
+
+
+<h2>@ViewBag.Title</h2>
+<br />
+
+@using (Html.BeginForm("EditCategory", "Category", FormMethod.Post))
+{
+    @Html.HiddenFor(model=>model.CategoryID)
+
+    <div class="form-group">
+        @Html.Label("Kategori Adı")
+        @Html.TextBoxFor(model => model.CategoryName,new { @class="form-control"})
+        @Html.ValidationMessageFor(model => model.CategoryName)
+        <br />
+
+        @Html.Label("Açıklama yaz")
+        @Html.TextAreaFor(model => model.CategoryDescription, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.CategoryDescription)
+        <br />
+
+        <button type="submit" class="btn btn-info">Kaydet</button>
+    </div>
+}
+

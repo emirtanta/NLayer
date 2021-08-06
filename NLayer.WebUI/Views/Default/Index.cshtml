@@ -1,0 +1,10 @@
+﻿@using NLayer.EntityLayer.Concrete
+@model List<Content>
+
+@foreach (var item in Model)
+{
+    <p>@item.Heading.HeadingName</p>
+    <p>@item.ContentDate.ToShortDateString() - @item.Writer.WriterName @item.Writer.WriterSurname</p>
+    <p>@item.ContentValue</p>
+    <hr />
+}

@@ -1,0 +1,38 @@
+﻿@model NLayer.EntityLayer.Concrete.Category
+@{
+    ViewBag.Title = "Yeni Kategory Ekleme Sayfası";
+}
+
+<h2>@ViewBag.Title</h2>
+<br />
+
+@using (Html.BeginForm("AddCategory","Category",FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Kategori Adı")
+    @Html.TextBoxFor(model => model.CategoryName)
+    @Html.ValidationMessageFor(model => model.CategoryName)
+    <br />
+
+    @Html.Label("Açıklama yaz")
+    @Html.TextAreaFor(model => model.CategoryDescription)
+    @Html.ValidationMessageFor(model => model.CategoryDescription)
+    <br />
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+</div>
+}
+
+@*<form class="form-group" method="post">
+
+    <input type="text" class="form-control" name="CategoryName" placeholder="kategori adı" />
+
+    <br />
+
+    <input type="text" class="form-control" name="CategoryDescription" placeholder="kategori açıklama" />
+
+    <br />
+    <button class="btn btn-primary">Ekle</button>
+
+</form>*@
+
